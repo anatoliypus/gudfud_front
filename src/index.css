@@ -1,0 +1,8 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+button:active, button:focus {
+    outline: none;
+}
