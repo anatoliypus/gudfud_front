@@ -1,0 +1,29 @@
+.header {
+    width: 100%;
+    height: 56px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.sidebarButton {
+    width: 24px;
+    height: 24px;
+    background-image: url('./img/burger.svg');
+    background-color: transparent;
+    border: 0;
+}
+
+.sidebarButton:focus,
+.sidebarButton:active {
+    outline: none;
+}
+
+.heading {
+    font-family: 'Bitter';
+    font-weight: 400;
+    font-size: 20;
+    color: #000;
+    margin-left: 32px;
+}
