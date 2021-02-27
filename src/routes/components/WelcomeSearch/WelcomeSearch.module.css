@@ -1,7 +1,8 @@
 .welcomeSearchBlock {
     width: 100%;
     height: auto;
-    padding: 37px 0;
+    padding-top: 40px;
+    padding-bottom: 60px;
     background: linear-gradient(180deg, #617154 0%, #cfd983 236.82%);
     display: flex;
     flex-direction: column;
