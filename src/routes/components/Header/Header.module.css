@@ -15,14 +15,8 @@
     border: 0;
 }
 
-.sidebarButton:focus,
-.sidebarButton:active {
-    outline: none;
-}
-
 .heading {
-    font-family: 'Bitter';
-    font-weight: 400;
+    font-weight: 500;
     font-size: 20;
     color: #000;
     margin-left: 32px;
