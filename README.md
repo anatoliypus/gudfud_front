@@ -45,6 +45,6 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 ________
-react - круто! 
-react - классная тема!
-ссылка на дизайн в фигме: www.figma.com%2Ffile%2FMb5YzcS9NWbw4bawh4hT8w%2FGudFud%3Fnode-id
+###react - круто!\
+###react - классная тема!
+ссылка на дизайн в фигме: https://www.figma.com/file/Mb5YzcS9NWbw4bawh4hT8w/GudFud?node-id=0%3A1
