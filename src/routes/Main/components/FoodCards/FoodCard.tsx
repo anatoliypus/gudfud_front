@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './FoodCard.module.css'
-import {Recipe} from '../../../model/model'
+import {Recipe} from '../../../../model/model'
 import like from './img/like.svg'
 import plate from './img/plate.svg'
 import time from './img/time.svg'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { createRecipe } from '../../../constructors/constructors'
+import { createRecipe } from '../../../../constructors/constructors'
 import { FoodCard } from '../FoodCards/FoodCard'
 import styles from './RecipesFeed.module.css'
 
