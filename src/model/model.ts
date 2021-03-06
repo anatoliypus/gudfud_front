@@ -1,7 +1,7 @@
 export type AppType = {
     categories: string[] | null
     user: UserType | null
-    recipes: Recipe[] | null
+    search: string | null
 }
 
 export type UserType = {
@@ -17,7 +17,7 @@ export type Recipe = {
     categories: string[]
     steps: string[]
     cookTime: number
-    products: Product[]
+    products: string[]
     images: string[]
     title: string
 }

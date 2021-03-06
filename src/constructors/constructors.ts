@@ -20,7 +20,7 @@ export function createRecipe(
     categories: string[],
     steps: string[],
     cookTime: number,
-    products: Product[],
+    products: string[],
     images: string[],
     title: string
 ): Recipe {
@@ -45,6 +45,6 @@ export function createApp(): AppType {
     return {
         categories: null,
         user: createUser(),
-        recipes: [],
+        search: null,
     }
 }

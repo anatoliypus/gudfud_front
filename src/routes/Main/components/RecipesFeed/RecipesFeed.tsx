@@ -1,11 +1,27 @@
-import React from 'react'
-import { createRecipe } from '../../../../constructors/constructors'
+import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import { AppType, Recipe } from '../../../../model/model'
 import { FoodCard } from '../FoodCards/FoodCard'
+import { getRecipes } from './getRecipes'
 import styles from './RecipesFeed.module.css'
 
-const recipe1 = createRecipe([], [], 10, [], ["https://eda.ru/img/eda/c88x88i/s2.eda.ru/StaticContent/Photos/120131085624/171210104827/p_O.jpg"], "Американские блины")
+interface RecipesFeedProps {
+    search: string | null
+}
 
-export function RecipesFeed() {
+function RecipesFeed(props: RecipesFeedProps) {
+    const [recipes, setRecipes] = useState<Recipe[]>([])
+
+    React.useEffect(() => {
+        async function fetchData(search: string | null) {
+            const data = await getRecipes(search)
+            if (data) {
+                setRecipes(data)
+            }
+        }
+        fetchData(props.search)
+    }, [props.search])
+
     return (
         <div className={styles.RecipesFeedBlock}>
             <div className={styles.chooseModeBlock}>
@@ -16,7 +32,17 @@ export function RecipesFeed() {
                 </button>
                 <button className={styles.chooseModeButton}>Популярное</button>
             </div>
-            <FoodCard recipe = {recipe1}></FoodCard>
+            {recipes.map((el, index) => (
+                <FoodCard recipe={el} key={index} />
+            ))}
         </div>
     )
 }
+
+const mapStateToProps = (state: AppType) => {
+    return {
+        search: state.search,
+    }
+}
+
+export default connect(mapStateToProps)(RecipesFeed)
