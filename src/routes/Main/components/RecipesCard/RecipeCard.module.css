@@ -1,0 +1,38 @@
+.RecipeCard {
+    background-color: blueviolet;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.RecipeTitle {
+    display: flex;
+    justify-content: center;
+}
+
+.RecipeName {
+}
+
+.RecipeAuthor {
+
+}
+
+.RecipeDescription {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.CookingTime, .AmountPortions, .Mark {
+    display: flex;
+    flex-direction: row;
+    padding-right: 10px;
+}
+
+.Ingridient {
+    background-color: brown;
+    height: 20px;
+
+}
+
+

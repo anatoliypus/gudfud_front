@@ -20,11 +20,3 @@ export function RecipesFeed() {
         </div>
     )
 }
-
-export function RecipeCard() {
-    return (
-        <div className={styles.RecipesCardBlock}>
-            <RecipeCard>
-        </div>
-    )
-}
