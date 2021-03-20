@@ -2,16 +2,14 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Main } from './routes/Main/Main'
 import './App.module.css'
+import RecipeCard from './routes/Main/components/RecipesCard/RecipeCard'
 
 function App() {
     return (
         <Router>
             <Switch>
-                <Route path="/about">
-                    <h1>About page</h1>
-                </Route>
-                <Route path="/faq">
-                    <h1>FAQ page</h1>
+                <Route path="/RecipeCard">
+                    <RecipeCard />
                 </Route>
                 <Route path="/">
                     <Main></Main>

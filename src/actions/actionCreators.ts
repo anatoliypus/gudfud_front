@@ -13,3 +13,10 @@ export function setRecipes(recipes: Recipe[]) {
         payload: recipes,
     }
 }
+
+export function changeChoosedRecipe(recipe: Recipe | null) {
+    return {
+        type: 'CHANGE_CHOOSED_RECIPE',
+        payload: recipe,
+    }
+}

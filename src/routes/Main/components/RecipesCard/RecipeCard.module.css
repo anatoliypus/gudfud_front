@@ -1,38 +1,70 @@
 .RecipeCard {
-    background-color: blueviolet;
-    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.mainImage {
+    height: calc(40% + 40px);
+    z-index: 9;
+}
+
+.content {
+    height: 60%;
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    border-radius: 40px;
+    padding: 25px 50px;
+    box-sizing: border-box;
+    overflow: scroll;
+    z-index: 10;
+}
+
+.mainHeading {
+    font-size: 20px;
+    color: #000;
+    font-weight: 700;
+}
+
+.titleLine {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.12);
+    height: 1px;
+    margin-top: 17px;
+}
+
+.ingredientsTitle {
+    font-weight: 500;
+    color: #000;
+    font-size: 18px;
+    margin-top: 18px;
+}
+
+.ingredient {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     margin-top: 20px;
 }
 
-.RecipeTitle {
+.linkBack {
+    position: absolute;
+    top: 71px;
+    left: 12px;
+    background-color: red;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-.RecipeName {
+.linkBack img {
+    width: 24px;
+    height: 24px;
 }
-
-.RecipeAuthor {
-
-}
-
-.RecipeDescription {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.CookingTime, .AmountPortions, .Mark {
-    display: flex;
-    flex-direction: row;
-    padding-right: 10px;
-}
-
-.Ingridient {
-    background-color: brown;
-    height: 20px;
-
-}
-
-

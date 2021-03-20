@@ -1,42 +1,62 @@
 import React from 'react'
 import styles from './RecipeCard.module.css'
-import {Recipe} from '../../../../model/model'
+import { AppType, Recipe } from '../../../../model/model'
 import like from './img/like.svg'
 import plate from './img/plate.svg'
 import time from './img/time.svg'
+import { connect } from 'react-redux'
+import { Header } from '../Header/Header'
+import { Link, useHistory } from 'react-router-dom'
+import arrayBack from './img/arrow-left.svg'
 
 interface RecipeCardProps {
-    recipe: Recipe,
+    recipe: Recipe | null
 }
 
-export function RecipeCard(props: RecipeCardProps) {
+function RecipeCard(props: RecipeCardProps) {
     const style = {
-        backgroundImage: "./img/TestRecipe.png",
+        backgroundImage: './img/TestRecipe.png',
     }
+    const history = useHistory()
+    if (!props.recipe) return null
     return (
-        <div className={styles.RecipeCard} style={style}>
-            <div className={styles.RecipeTitle} style={style}>
-                <div className={styles.RecipeName}><p>{props.recipe.title}</p></div>
-                <div className={styles.RecipeAuthor} style={style}></div>
-            </div>
-                <div className={styles.RecipeDescription} style={style}>
-                    <div className={styles.CookingTime} style={style}>
-                        <img src={time}></img>
-                        <p>{props.recipe.cookTime} минут</p>
-                    </div>
-                    <div className={styles.AmountPortions} style={style}>
-                        <img src={plate}></img>
-                        <p>6 порций</p>
-                    </div>
-                    <div className={styles.Mark} style={style}>
-                        <img src={like}></img>
-                        <p>10000</p>    
-                    </div>
+        <>
+            <div className={styles.RecipeCard} style={style}>
+                <button
+                    className={styles.linkBack}
+                    onClick={() => {
+                        history.push('/')
+                    }}
+                >
+                    <img src={arrayBack} alt="" />
+                </button>
+                <Header />
+                <img
+                    src={props.recipe.images[0]}
+                    alt=""
+                    className={styles.mainImage}
+                />
+                <div className={styles.content}>
+                    <h3 className={styles.mainHeading}>{props.recipe.title}</h3>
+                    <hr className={styles.titleLine} />
+                    <p className={styles.ingredientsTitle}>Ингредиенты</p>
+                    {props.recipe.products.map((el, index) => {
+                        return (
+                            <div key={index} className={styles.ingredient}>
+                                <p>{el}</p>
+                            </div>
+                        )
+                    })}
                 </div>
-            <div className={styles.RecipeIngridients} style={style}>
-                <div className={styles.Ingridient} style={style}>
-                </div>
             </div>
-        </div>
+        </>
     )
 }
+
+const mapStateToProps = (state: AppType) => {
+    return {
+        recipe: state.choosedRecipe,
+    }
+}
+
+export default connect(mapStateToProps)(RecipeCard)

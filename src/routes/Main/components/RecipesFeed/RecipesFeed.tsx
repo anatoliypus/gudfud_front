@@ -1,15 +1,19 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { AppType, Recipe } from '../../../../model/model'
 import { FoodCard } from '../FoodCards/FoodCard'
 import { getRecipes } from './getRecipes'
 import styles from './RecipesFeed.module.css'
-import { setRecipes } from '../../../../actions/actionCreators'
+import {
+    setRecipes,
+    changeChoosedRecipe,
+} from '../../../../actions/actionCreators'
 
 interface RecipesFeedProps {
     search: string | null
     recipes: Recipe[]
     setRecipes: (r: Recipe[]) => void
+    changeChoosedRecipe: (r: Recipe | null) => void
 }
 
 function RecipesFeed(props: RecipesFeedProps) {
@@ -21,7 +25,7 @@ function RecipesFeed(props: RecipesFeedProps) {
             }
         }
         fetchData(props.search)
-    }, [props])
+    }, [props.search])
 
     return (
         <div className={styles.RecipesFeedBlock}>
@@ -34,7 +38,11 @@ function RecipesFeed(props: RecipesFeedProps) {
                 <button className={styles.chooseModeButton}>Популярное</button>
             </div>
             {props.recipes.map((el, index) => (
-                <FoodCard recipe={el} key={index} />
+                <FoodCard
+                    onclickHandler={props.changeChoosedRecipe}
+                    recipe={el}
+                    key={index}
+                />
             ))}
         </div>
     )
@@ -49,6 +57,7 @@ const mapStateToProps = (state: AppType) => {
 
 const mapDispatchToProps = {
     setRecipes,
+    changeChoosedRecipe,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(RecipesFeed)
