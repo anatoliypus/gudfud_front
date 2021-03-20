@@ -3,7 +3,7 @@ import styles from './WelcomeSearch.module.css'
 import avatar from './img/avatar.png'
 import search from './img/search.svg'
 import { connect } from 'react-redux'
-import { changeSearch } from '../../../../actions/actonCreators'
+import { changeSearch } from '../../../../actions/actionCreators'
 
 interface WelcomeSearchProps {
     changeSearch: (search: string | null) => void

@@ -2,6 +2,7 @@ export type AppType = {
     categories: string[] | null
     user: UserType | null
     search: string | null
+    recipes: Recipe[]
 }
 
 export type UserType = {

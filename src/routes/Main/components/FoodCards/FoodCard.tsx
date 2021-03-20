@@ -15,6 +15,7 @@ export function FoodCard(props: FoodCardProps) {
     }
     return (
         <div className={styles.foodCard} style={style}>
+            <div className={styles.shadow}></div>
             <div className={styles.foodCardInfo}>
                 <span className={styles.mainInfo}>{props.recipe.title}</span>
                 <div className={styles.cardProps}>

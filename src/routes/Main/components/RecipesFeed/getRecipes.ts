@@ -4,8 +4,8 @@ import { Recipe } from '../../../../model/model'
 export function getRecipes(search: string | null): Promise<Recipe[] | null> {
     return new Promise(async (resolve, reject) => {
         const url = search
-            ? `http://localhost:5000/api/get?findTitle=${search}`
-            : 'http://localhost:5000/api/get'
+            ? `https://gudfud.herokuapp.com/api/get?findTitle=${search}`
+            : 'https://gudfud.herokuapp.com/api/get'
         let res = await fetch(url, {
             mode: 'cors',
         })

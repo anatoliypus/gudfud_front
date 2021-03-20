@@ -46,5 +46,6 @@ export function createApp(): AppType {
         categories: null,
         user: createUser(),
         search: null,
+        recipes: [],
     }
 }

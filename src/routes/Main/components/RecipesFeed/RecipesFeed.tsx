@@ -4,23 +4,24 @@ import { AppType, Recipe } from '../../../../model/model'
 import { FoodCard } from '../FoodCards/FoodCard'
 import { getRecipes } from './getRecipes'
 import styles from './RecipesFeed.module.css'
+import { setRecipes } from '../../../../actions/actionCreators'
 
 interface RecipesFeedProps {
     search: string | null
+    recipes: Recipe[]
+    setRecipes: (r: Recipe[]) => void
 }
 
 function RecipesFeed(props: RecipesFeedProps) {
-    const [recipes, setRecipes] = useState<Recipe[]>([])
-
     React.useEffect(() => {
         async function fetchData(search: string | null) {
             const data = await getRecipes(search)
             if (data) {
-                setRecipes(data)
+                props.setRecipes(data)
             }
         }
         fetchData(props.search)
-    }, [props.search])
+    }, [props])
 
     return (
         <div className={styles.RecipesFeedBlock}>
@@ -32,7 +33,7 @@ function RecipesFeed(props: RecipesFeedProps) {
                 </button>
                 <button className={styles.chooseModeButton}>Популярное</button>
             </div>
-            {recipes.map((el, index) => (
+            {props.recipes.map((el, index) => (
                 <FoodCard recipe={el} key={index} />
             ))}
         </div>
@@ -42,7 +43,12 @@ function RecipesFeed(props: RecipesFeedProps) {
 const mapStateToProps = (state: AppType) => {
     return {
         search: state.search,
+        recipes: state.recipes,
     }
 }
 
-export default connect(mapStateToProps)(RecipesFeed)
+const mapDispatchToProps = {
+    setRecipes,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RecipesFeed)
