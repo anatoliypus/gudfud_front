@@ -6,7 +6,7 @@ import plate from './img/plate.svg'
 import time from './img/time.svg'
 import { connect } from 'react-redux'
 import { Header } from '../Header/Header'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import arrayBack from './img/arrow-left.svg'
 
 interface RecipeCardProps {
@@ -21,6 +21,7 @@ function RecipeCard(props: RecipeCardProps) {
     if (!props.recipe) return null
     return (
         <>
+            <Header />
             <div className={styles.RecipeCard} style={style}>
                 <button
                     className={styles.linkBack}
@@ -30,11 +31,11 @@ function RecipeCard(props: RecipeCardProps) {
                 >
                     <img src={arrayBack} alt="" />
                 </button>
-                <Header />
-                <img
-                    src={props.recipe.images[0]}
-                    alt=""
+                <div
                     className={styles.mainImage}
+                    style={{
+                        backgroundImage: `url(${props.recipe.images[0]})`,
+                    }}
                 />
                 <div className={styles.content}>
                     <h3 className={styles.mainHeading}>{props.recipe.title}</h3>

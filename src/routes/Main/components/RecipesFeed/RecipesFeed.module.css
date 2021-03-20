@@ -31,3 +31,9 @@
 .chooseModeButtonActive {
     background: #f3c335;
 }
+
+.preloader {
+    width: 100px;
+    height: 100px;
+    margin-top: 50px;
+}

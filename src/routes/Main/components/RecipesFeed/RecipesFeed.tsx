@@ -8,6 +8,7 @@ import {
     setRecipes,
     changeChoosedRecipe,
 } from '../../../../actions/actionCreators'
+import preloader from './img/preloader.svg'
 
 interface RecipesFeedProps {
     search: string | null
@@ -37,13 +38,17 @@ function RecipesFeed(props: RecipesFeedProps) {
                 </button>
                 <button className={styles.chooseModeButton}>Популярное</button>
             </div>
-            {props.recipes.map((el, index) => (
-                <FoodCard
-                    onclickHandler={props.changeChoosedRecipe}
-                    recipe={el}
-                    key={index}
-                />
-            ))}
+            {!props.recipes.length && (
+                <img src={preloader} className={styles.preloader} />
+            )}
+            {props.recipes &&
+                props.recipes.map((el, index) => (
+                    <FoodCard
+                        onclickHandler={props.changeChoosedRecipe}
+                        recipe={el}
+                        key={index}
+                    />
+                ))}
         </div>
     )
 }
