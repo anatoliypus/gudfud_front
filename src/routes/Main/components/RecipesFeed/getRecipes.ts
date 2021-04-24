@@ -11,7 +11,6 @@ export function getRecipes(search: string | null): Promise<Recipe[] | null> {
         })
         if (res.ok) {
             const json = await res.json()
-            console.log(json)
             let collection = []
             for (let el of json) {
                 try {
@@ -26,7 +25,7 @@ export function getRecipes(search: string | null): Promise<Recipe[] | null> {
                         )
                     )
                 } catch {
-                    console.log('error while parsing')
+                    console.error('error while parsing')
                 }
             }
             resolve(collection)

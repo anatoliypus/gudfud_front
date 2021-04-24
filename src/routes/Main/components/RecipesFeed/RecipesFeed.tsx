@@ -29,18 +29,20 @@ function RecipesFeed(props: RecipesFeedProps) {
     }, [props.search])
 
     return (
-        <div className={styles.RecipesFeedBlock}>
-            <div className={styles.chooseModeBlock}>
-                <button
-                    className={`${styles.chooseModeButton} ${styles.chooseModeButtonActive}`}
-                >
-                    Рекомендуем
-                </button>
-                <button className={styles.chooseModeButton}>Популярное</button>
-            </div>
-            {!props.recipes.length && (
-                <img src={preloader} className={styles.preloader} />
+        <div>
+        <div className={styles.chooseModeBlock}>
+        <button
+            className={`${styles.chooseModeButton} ${styles.chooseModeButtonActive}`}
+        >
+            Рекомендуем
+        </button>
+        <button className={styles.chooseModeButton}>Популярное</button>
+        </div>
+        {!props.recipes.length && (
+                <div className={styles.preloader}><img src={preloader}></img></div>
             )}
+        <div className={styles.RecipesFeedBlock}>
+
             {props.recipes &&
                 props.recipes.map((el, index) => (
                     <FoodCard
@@ -50,7 +52,9 @@ function RecipesFeed(props: RecipesFeedProps) {
                     />
                 ))}
         </div>
+        </div>
     )
+   
 }
 
 const mapStateToProps = (state: AppType) => {
