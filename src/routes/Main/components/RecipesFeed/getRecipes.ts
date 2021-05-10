@@ -11,17 +11,16 @@ export function getRecipes(search: string | null): Promise<Recipe[] | null> {
         })
         if (res.ok) {
             const json = await res.json()
-            console.log(json)
             let collection = []
             for (let el of json) {
                 try {
                     collection.push(
                         createRecipe(
-                            JSON.parse(el.categories_arr_json),
-                            JSON.parse(el.steps_arr_json),
+                            el.categories.split(','),
+                            JSON.parse(el.steps),
                             el.cook_time,
-                            JSON.parse(el.ingredients_arr_json),
-                            JSON.parse(el.images_arr_json),
+                            el.ingredients.split(','),
+                            el.images.split(','),
                             el.title
                         )
                     )
