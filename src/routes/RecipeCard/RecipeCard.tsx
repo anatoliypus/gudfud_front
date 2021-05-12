@@ -40,17 +40,22 @@ function RecipeCard(props: RecipeCardProps) {
                     }}
                 />
                 <div className={styles.content}>
-                    <div className={styles.title}
-                         style={{
-                             backgroundImage: `url(${strip})`,
-                         }}
+                    <div
+                        className={styles.title}
+                        style={{
+                            backgroundImage: `url(${strip})`,
+                        }}
                     >
-                        <h3 className={styles.mainHeading}>{props.recipe.title}</h3>
+                        <h3 className={styles.mainHeading}>
+                            {props.recipe.title}
+                        </h3>
                         <hr className={styles.titleLine} />
                         <div className={styles.cardProps}>
                             <div className={styles.elemProps}>
                                 <img src={time} alt=""></img>
-                                <p className={styles.textBox}>{props.recipe.cookTime}</p>
+                                <p className={styles.textBox}>
+                                    {props.recipe.cookTime}
+                                </p>
                             </div>
                             <div className={styles.elemProps}>
                                 <img src={plate} alt=""></img>
@@ -68,22 +73,26 @@ function RecipeCard(props: RecipeCardProps) {
                                 </div>
                             )
                         })}
-                        <p className={styles.stepsTitle}>Инструкция по приготовлению:</p>
+                        <p className={styles.stepsTitle}>
+                            Инструкция по приготовлению:
+                        </p>
                         {props.recipe.steps.map((el, index) => {
                             return (
                                 <div key={index} className={styles.ingredient}>
-                                    <p className={styles.stepInd}>{index + 1}.</p>
+                                    <p className={styles.stepInd}>
+                                        {index + 1}.
+                                    </p>
                                     <p>{el}</p>
                                 </div>
                             )
                         })}
                     </div>
-                    <div className={styles.bottomPanel}
+                    {/* <div className={styles.bottomPanel}
                         style={{
                             backgroundImage: `url(${bottomPanel})`
                         }}
                     >
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>

@@ -96,12 +96,14 @@
 
 .bigLine {
     height: 13px;
-    background: #E5E5E5;
+    background: #e5e5e5;
 }
 
 .bottomPanel {
     height: 135px;
     width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .linkBack {
