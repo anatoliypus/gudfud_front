@@ -27,6 +27,10 @@ function RecipesFeed(props: RecipesFeedProps) {
     const [isShowButtonVisible, setIsShowButtonVisible] = useState(false)
     const [searchState, setSearchState] = useState<string | null>(props.search)
 
+    const search = props.search
+    const offset = props.offset
+    const loadAmount = props.loadAmount
+
     React.useEffect(() => {
         async function fetchData(search: string | null) {
             if (search !== searchState) {
@@ -51,7 +55,7 @@ function RecipesFeed(props: RecipesFeedProps) {
             }
         }
         fetchData(props.search)
-    }, [props.search, props.loadAmount, props.offset])
+    }, [search, offset, loadAmount])
 
     const showMoreHandler = () => {
         props.changeOffset(props.offset + props.loadAmount)
@@ -74,7 +78,11 @@ function RecipesFeed(props: RecipesFeedProps) {
                 {props.recipes &&
                     props.recipes.map((el, index) => (
                         <FoodCard
-                            onclickHandler={props.changeChoosedRecipe}
+                            onclickHandler={(r) => {
+                                props.changeOffset(0)
+                                props.setRecipes([])
+                                props.changeChoosedRecipe(r)
+                            }}
                             recipe={el}
                             key={index}
                         />

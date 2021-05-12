@@ -50,6 +50,7 @@
     transition: 0.3s;
     flex-grow: 0;
     flex-shrink: 0;
+    margin-right: 30px;
 }
 
 .showMoreButton:hover {
@@ -63,7 +64,7 @@
     padding-left: 10%;
     margin-top: 40px;
     overflow: scroll;
-    scrollbar-width: none;
+    height: auto;
 }
 
 .recipesBlock::-webkit-scrollbar {
@@ -76,8 +77,13 @@
         margin-top: 0;
         justify-content: space-between;
         padding-right: 10%;
+        overflow: auto;
+    }
+    .recipesBlock::-webkit-scrollbar {
+        display: unset;
     }
     .showMoreButton {
         margin-top: 40px;
+        margin-right: 0;
     }
 }
