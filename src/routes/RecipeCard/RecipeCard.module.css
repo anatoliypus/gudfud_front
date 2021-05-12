@@ -4,29 +4,39 @@
 }
 
 .mainImage {
+    position: fixed;
     height: calc(40% + 40px);
-    position: absolute;
     top: 56px;
     left: 0;
     z-index: 9;
     background-size: cover;
     width: 100%;
+    background-attachment: inherit;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
 .content {
-    height: 60%;
-    position: absolute;
+    position: fixed;
+    overflow: scroll;
+    height: 80%;
     width: 100%;
     background-color: #fff;
     bottom: 0;
     left: 0;
-    border-radius: 40px;
-    padding: 25px 50px;
+    border-radius: 40px 40px 0px 0px;
+    padding: 0px 0px 0px 0px;
     box-sizing: border-box;
-    overflow: scroll;
     z-index: 10;
+}
+
+.title {
+    padding: 33px 50px 0px 50px;
+    background-repeat: no-repeat;
+}
+
+.body {
+    padding: 0px 50px;
 }
 
 .mainHeading {
@@ -49,10 +59,49 @@
     margin-top: 18px;
 }
 
+.stepsTitle {
+    font-weight: 500;
+    color: #000;
+    font-size: 18px;
+    margin-top: 33px;
+}
+
+.stepInd {
+    font-size: 36px;
+}
+
+.cardProps {
+    padding: 15px 10px 15px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.elemProps {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
 .ingredient {
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     margin-top: 20px;
+}
+
+.textBox {
+    margin-left: 12px;
+}
+
+.bigLine {
+    height: 13px;
+    background: #E5E5E5;
+}
+
+.bottomPanel {
+    height: 135px;
+    width: 100%;
 }
 
 .linkBack {
