@@ -1,0 +1,92 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+    height:100%;
+}
+.BurgerMenuIcon {
+    background-image: url('./Hamburger_icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 75px;
+    background-color: rgb(255, 255, 255);
+    border: 0;
+    z-index:50;
+    display:none;
+}
+
+.BurgerMenuIcon.active{
+    display:flex;
+}
+
+.BurgerMenuIcon:hover {
+    background-color: #0000003d;
+    transition: all 500ms ease;
+}
+
+.BurgerMenu {
+    display: none;
+    height: 100%;
+    width: 100%;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    flex-direction: row;
+    z-index: 1;
+}
+
+.BurgerMenu.active {
+    display: flex;
+    transition: 350ms;
+}
+.User {
+    background-image: url('./Header_Background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 50%;
+    background-position: top;
+    border-bottom: 2px solid gray;
+    display: flex;
+    min-height: 100px;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+.UserPic {
+    background-image: url('./Avatar.jpg');
+    background-repeat: no-repeat;
+    background-size: inherit;
+    width: 61px;
+    height: 61px;
+    border-radius: 75px;
+}
+
+.UserData, .UserPic {
+    margin-top: 80px;
+}
+.SideBar {
+    margin-left: 30px;
+    max-width: 400px;
+    width: 100%;
+    align-content: flex-end;
+}
+.PagesList {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(70px, 90px));
+    background-color: white;
+    text-decoration: none;
+}
+
+.PagesList div {
+    font-size: 20px;
+    min-height: 70px;
+    border-bottom: 2px solid gray;
+}
+.DeadZone {
+    justify-self: right;
+    width: 100%;
+    height: 100;
+    background-color: rgba(0, 0, 0, 0.308);
+    z-index: 100;
+}
