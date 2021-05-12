@@ -65,27 +65,29 @@ function RecipesFeed(props: RecipesFeedProps) {
                 >
                     Рекомендуем
                 </button>
-                <button className={styles.chooseModeButton}>Популярное</button>
+                {/* <button className={styles.chooseModeButton}>Популярное</button> */}
             </div>
             {!props.recipes.length && (
                 <img src={preloader} className={styles.preloader} />
             )}
-            {props.recipes &&
-                props.recipes.map((el, index) => (
-                    <FoodCard
-                        onclickHandler={props.changeChoosedRecipe}
-                        recipe={el}
-                        key={index}
-                    />
-                ))}
-            {isShowButtonVisible && (
-                <button
-                    onClick={showMoreHandler}
-                    className={styles.showMoreButton}
-                >
-                    Показать еще!
-                </button>
-            )}
+            <div className={styles.recipesBlock}>
+                {props.recipes &&
+                    props.recipes.map((el, index) => (
+                        <FoodCard
+                            onclickHandler={props.changeChoosedRecipe}
+                            recipe={el}
+                            key={index}
+                        />
+                    ))}
+                {isShowButtonVisible && (
+                    <button
+                        onClick={showMoreHandler}
+                        className={styles.showMoreButton}
+                    >
+                        Показать еще!
+                    </button>
+                )}
+            </div>
         </div>
     )
 }

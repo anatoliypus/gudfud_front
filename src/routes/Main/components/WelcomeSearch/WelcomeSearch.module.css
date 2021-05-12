@@ -4,6 +4,9 @@
     padding-top: 40px;
     padding-bottom: 60px;
     background: linear-gradient(180deg, #617154 0%, #cfd983 236.82%);
+    background-image: url('./img/header-bg.png');
+    background-size: cover;
+    background-position: center center;
     display: flex;
     flex-direction: column;
     align-items: center;

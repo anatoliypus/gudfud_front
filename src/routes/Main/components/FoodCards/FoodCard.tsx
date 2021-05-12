@@ -26,22 +26,10 @@ export function FoodCard(props: FoodCardProps) {
             style={style}
         >
             <div className={styles.shadow}></div>
-            <div className={styles.foodCardInfo}>
-                <span className={styles.mainInfo}>{props.recipe.title}</span>
-                <div className={styles.cardProps}>
-                    <div className={styles.elemProps}>
-                        <img src={time} alt=""></img>
-                        <p>{props.recipe.cookTime}</p>
-                    </div>
-                    <div className={styles.elemProps}>
-                        <img src={plate} alt=""></img>
-                        <p>6 порций</p>
-                    </div>
-                    <div className={styles.elemProps}>
-                        <img src={like} alt=""></img>
-                        <p>10000</p>
-                    </div>
-                </div>
+            <span className={styles.mainInfo}>{props.recipe.title}</span>
+            <div className={styles.elemProps}>
+                <img src={time} alt=""></img>
+                <p>{props.recipe.cookTime}</p>
             </div>
         </div>
     )
