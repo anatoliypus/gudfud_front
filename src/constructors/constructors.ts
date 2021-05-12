@@ -49,6 +49,6 @@ export function createApp(): AppType {
         recipes: [],
         choosedRecipe: null,
         offset: 0,
-        loadAmount: 10,
+        loadAmount: 4,
     }
 }

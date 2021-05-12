@@ -1,8 +1,8 @@
 import { createRecipe } from '../../../../constructors/constructors'
 import { Recipe } from '../../../../model/model'
+import { configuration } from '../../../../configuration'
 
-// const path = 'http://localhost:3000/data/get'
-const path = 'https://gudfud.herokuapp.com/data/get'
+const path = `${configuration.server}/data/get`
 
 export function getRecipes(
     amount: number,
@@ -13,6 +13,7 @@ export function getRecipes(
         const url = `${path}?amount=${amount}&offset=${offset}${
             search ? `&key=${search}` : ''
         }`
+        console.log(url)
         let res = await fetch(url, {
             mode: 'cors',
         })

@@ -7,9 +7,23 @@ export function changeSearch(search: string | null) {
     }
 }
 
+export function changeOffset(offset: number) {
+    return {
+        type: 'CHANGE_OFFSET',
+        payload: offset,
+    }
+}
+
 export function setRecipes(recipes: Recipe[]) {
     return {
         type: 'SET_RECIPES',
+        payload: recipes,
+    }
+}
+
+export function addRecipes(recipes: Recipe[]) {
+    return {
+        type: 'ADD_RECIPES',
         payload: recipes,
     }
 }
