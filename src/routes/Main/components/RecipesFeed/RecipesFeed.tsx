@@ -25,17 +25,22 @@ interface RecipesFeedProps {
 
 function RecipesFeed(props: RecipesFeedProps) {
     const [isShowButtonVisible, setIsShowButtonVisible] = useState(false)
+    const [searchState, setSearchState] = useState<string | null>(props.search)
 
     React.useEffect(() => {
         async function fetchData(search: string | null) {
+            if (search !== searchState) {
+                props.changeOffset(0)
+            }
             const data = await getRecipes(
                 props.loadAmount,
                 props.offset,
                 search
             )
             if (data) {
-                if (!props.recipes.length) {
+                if (!props.recipes.length || search !== searchState) {
                     setIsShowButtonVisible(true)
+                    setSearchState(search)
                     props.setRecipes(data)
                 } else {
                     props.addRecipes(data)

@@ -13,13 +13,11 @@ export function getRecipes(
         const url = `${path}?amount=${amount}&offset=${offset}${
             search ? `&key=${search}` : ''
         }`
-        console.log(url)
         let res = await fetch(url, {
             mode: 'cors',
         })
         if (res.ok) {
             const json = await res.json()
-            console.log(json)
             let collection = []
             for (let el of json) {
                 try {
