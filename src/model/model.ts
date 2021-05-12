@@ -4,6 +4,8 @@ export type AppType = {
     search: string | null
     recipes: Recipe[]
     choosedRecipe: Recipe | null
+    offset: number
+    loadAmount: number
 }
 
 export type UserType = {

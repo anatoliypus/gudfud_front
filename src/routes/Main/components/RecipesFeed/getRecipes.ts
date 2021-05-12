@@ -1,11 +1,18 @@
 import { createRecipe } from '../../../../constructors/constructors'
 import { Recipe } from '../../../../model/model'
 
-export function getRecipes(search: string | null): Promise<Recipe[] | null> {
+// const path = 'http://localhost:3000/data/get'
+const path = 'https://gudfud.herokuapp.com/data/get'
+
+export function getRecipes(
+    amount: number,
+    offset: number,
+    search: string | null
+): Promise<Recipe[] | null> {
     return new Promise(async (resolve, reject) => {
-        const url = search
-            ? `https://gudfud.herokuapp.com/data/get?key=${search}`
-            : 'https://gudfud.herokuapp.com/data/get'
+        const url = `${path}?amount=${amount}&offset=${offset}${
+            search ? `&key=${search}` : ''
+        }`
         let res = await fetch(url, {
             mode: 'cors',
         })

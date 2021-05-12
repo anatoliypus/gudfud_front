@@ -13,6 +13,8 @@ import preloader from './img/preloader.svg'
 interface RecipesFeedProps {
     search: string | null
     recipes: Recipe[]
+    offset: number
+    loadAmount: number
     setRecipes: (r: Recipe[]) => void
     changeChoosedRecipe: (r: Recipe | null) => void
 }
@@ -20,7 +22,11 @@ interface RecipesFeedProps {
 function RecipesFeed(props: RecipesFeedProps) {
     React.useEffect(() => {
         async function fetchData(search: string | null) {
-            const data = await getRecipes(search)
+            const data = await getRecipes(
+                props.loadAmount,
+                props.offset,
+                search
+            )
             if (data) {
                 props.setRecipes(data)
             }
@@ -57,6 +63,8 @@ const mapStateToProps = (state: AppType) => {
     return {
         search: state.search,
         recipes: state.recipes,
+        offset: state.offset,
+        loadAmount: state.loadAmount,
     }
 }
 

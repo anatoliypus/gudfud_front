@@ -2,6 +2,8 @@ import { createApp } from '../constructors/constructors'
 import { AppType } from '../model/model'
 import categoriesReducer from './categoriesReducer'
 import choosedRecipeReducer from './choosedRecipeReducer'
+import loadAmountReducer from './loadAmountReducer'
+import offsetReducer from './offsetReducer'
 import { recipesReducer } from './recipesReducer'
 import searchReducer from './searchReducer'
 import userReducer from './userReducer'
@@ -16,5 +18,7 @@ export default function appReducers(
         search: searchReducer(state.search, action),
         recipes: recipesReducer(state.recipes, action),
         choosedRecipe: choosedRecipeReducer(state.choosedRecipe, action),
+        offset: offsetReducer(state.offset, action),
+        loadAmount: loadAmountReducer(state.loadAmount, action),
     }
 }
