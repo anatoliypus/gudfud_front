@@ -26,8 +26,8 @@ export function getRecipes(
                             el.categories,
                             el.steps,
                             el.cook_time,
-                            el.ingredients,
-                            el.images,
+                            JSON.parse(el.ingredients),
+                            JSON.parse(el.images),
                             el.title
                         )
                     )
