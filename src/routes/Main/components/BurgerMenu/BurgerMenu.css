@@ -65,7 +65,7 @@
 }
 .UserData,
 .UserPic {
-    margin-top:20px;
+    margin-top: 20px;
     margin-left: 20px;
     margin-bottom: 20px;
 }
@@ -117,22 +117,23 @@
     min-height: 35px;
     height: 35px;
 }
-.FeedBack{
+.FeedBack {
     display: grid;
     grid-template-rows: repeat(auto-fill, 40px);
     margin-top: 5px;
     background-image: url('./Yellow.jpg');
     height: 20%;
 }
-.FeedBack p, .FeedBack a{
+.FeedBack p,
+.FeedBack a {
     margin-top: 15px;
     color: white;
     font-size: 14px;
     margin-left: 15px;
     margin-right: 15px;
 }
-.FeedBack a{
-    color: #DE7E0F;
+.FeedBack a {
+    color: #de7e0f;
     text-decoration: underline;
     font-weight: 600;
 }
