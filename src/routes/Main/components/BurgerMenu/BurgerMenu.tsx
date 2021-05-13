@@ -25,23 +25,35 @@ export default function BurgerMenu() {
                     </div>
                     <div className="PagesList">
                         <div>
-                            <Link className='text-link' to="/">Главная</Link>
+                            <Link className="text-link" to="/">
+                                Главная
+                            </Link>
                         </div>
                         <div>
-                            <Link className='text-link' to="/favouriteRecipes">Любимые рецепты</Link>
+                            <Link className="text-link" to="/favouriteRecipes">
+                                Любимые рецепты
+                            </Link>
                         </div>
                         <div>
-                            <Link className='text-link'to="/preferences">Предпочтения</Link>
+                            <Link className="text-link" to="/preferences">
+                                Предпочтения
+                            </Link>
                         </div>
                         <div>
-                            <Link className='text-link' to="/requestHistory">История запросов</Link>
+                            <Link className="text-link" to="/requestHistory">
+                                История запросов
+                            </Link>
                         </div>
                         <div id="space"></div>
                         <div>
-                            <Link className='text-link'to="/settings">Настройки</Link>
+                            <Link className="text-link" to="/settings">
+                                Настройки
+                            </Link>
                         </div>
                         <div>
-                            <Link className='text-link' to="/support">Служба поддержки</Link>
+                            <Link className="text-link" to="/support">
+                                Служба поддержки
+                            </Link>
                         </div>
                     </div>
                     <div className={'FeedBack'}>
