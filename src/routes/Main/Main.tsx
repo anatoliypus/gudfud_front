@@ -1,6 +1,6 @@
 import React from 'react'
+import { Header } from '../CommonComponents/Header/Header'
 import BurgerMenu from './components/BurgerMenu/BurgerMenu'
-import { Header } from './components/Header/Header'
 import RecipesFeed from './components/RecipesFeed/RecipesFeed'
 import WelcomeSearch from './components/WelcomeSearch/WelcomeSearch'
 
