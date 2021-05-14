@@ -32,6 +32,6 @@ export type Product = {
 }
 
 export type Category = {
-    name: string
-    point: string
+    title: string
+    choosed: boolean
 }
