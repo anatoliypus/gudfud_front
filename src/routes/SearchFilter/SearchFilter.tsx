@@ -9,6 +9,7 @@ import {
 } from '../../../../gudfud_front/src/actions/actionCreators'
 import { createCategory } from '../../constructors/constructors'
 import { AppType, Category } from '../../model/model'
+import { configuration } from '../../configuration'
 
 interface WelcomeSearchProps {
     changeSearch: (search: string | null) => void
@@ -17,6 +18,18 @@ interface WelcomeSearchProps {
 }
 
 function SearchFilter(props: WelcomeSearchProps) {
+    function RadioClickHandler(str: string) {
+        if (props.categories) {
+            props.setCategories(
+                props.categories.map((el) => {
+                    if (el.title === str) {
+                        return { ...el, choosed: !el.choosed }
+                    }
+                    return el
+                })
+            )
+        }
+    }
 
     useEffect(() => {
         async function fetchData() {
@@ -37,6 +50,36 @@ function SearchFilter(props: WelcomeSearchProps) {
         }
         fetchData()
     }, [])
+
+    useEffect(() => {
+        async function getCategories() {
+            if (props.categories && props.categories.length) {
+                const collection = props.categories.filter((el) => {
+                    return el.choosed
+                })
+                if (collection && collection.length) {
+                    let url = `${
+                        configuration.server
+                    }/data/get?amount=5&offset=0&categories=${encodeURIComponent(
+                        '#'
+                    )}`
+                    collection.forEach((el) => {
+                        url += `&categories=${el.title}`
+                    })
+                    const res = await fetch(url, {
+                        mode: 'cors',
+                    })
+                    if (res.ok) {
+                        const json = await res.json()
+                        console.log(json)
+                    } else {
+                        console.log(res.body)
+                    }
+                }
+            }
+        }
+        getCategories()
+    }, [props.categories])
 
     const input = useRef<HTMLInputElement>(null)
     const inputChangeHandler = () => {
@@ -65,17 +108,27 @@ function SearchFilter(props: WelcomeSearchProps) {
                 {props.categories &&
                     props.categories.map((el, index) => (
                         <>
-                        <div key={index} className={styles.CategoryInputBlock}>
-                        <label className={styles.LabelInput}>
-                            <p>{el.title}</p>
-                            <input type='checkbox' name='checkbox' className={styles.inputCategory}></input>
-                        </label>
-                        </div>
+                            <div
+                                key={index}
+                                className={styles.CategoryInputBlock}
+                            >
+                                <input
+                                    type="checkbox"
+                                    className={styles.inputCategory}
+                                    onClick={() => {
+                                        RadioClickHandler(el.title)
+                                    }}
+                                ></input>
+                                <label className={styles.LabelInput}>
+                                    {' '}
+                                    {el.title}
+                                </label>
+                            </div>
                         </>
                     ))}
             </div>
             <button className={styles.SeeMore}>
-                    <p>Показать больше</p>
+                <p>Показать больше</p>
             </button>
             <div className={styles.BetweenBlock}></div>
             <div className={styles.FooterSearch}>
