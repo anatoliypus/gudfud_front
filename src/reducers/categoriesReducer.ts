@@ -1,4 +1,4 @@
-import { Category } from "../model/model"
+import { Category } from '../model/model'
 
 export default function categoriesReducer(
     state: Category[] | null = null,
