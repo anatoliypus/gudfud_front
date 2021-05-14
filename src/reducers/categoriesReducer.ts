@@ -1,6 +1,11 @@
+import { Category } from "../model/model"
+
 export default function categoriesReducer(
-    state: string[] | null = null,
+    state: Category[] | null = null,
     action: any
-): string[] | null {
+): Category[] | null {
+    if (action.type === 'CHANGE_CATEGORY') {
+        return action.payload
+    }
     return state
 }

@@ -1,5 +1,5 @@
 export type AppType = {
-    categories: string[] | null
+    categories: Category[] | null
     user: UserType | null
     search: string | null
     recipes: Recipe[]
@@ -29,4 +29,9 @@ export type Recipe = {
 export type Product = {
     amount: string
     name: string
+}
+
+export type Category = {
+    name: string
+    point: string
 }

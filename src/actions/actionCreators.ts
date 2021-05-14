@@ -1,4 +1,4 @@
-import { Recipe } from '../model/model'
+import { Category, Recipe } from '../model/model'
 
 export function changeSearch(search: string | null) {
     return {
@@ -32,5 +32,12 @@ export function changeChoosedRecipe(recipe: Recipe | null) {
     return {
         type: 'CHANGE_CHOOSED_RECIPE',
         payload: recipe,
+    }
+}
+
+export function setCategories(categories: Category[] | null) {
+    return {
+        type: 'CHANGE_CATEGORY',
+        payload: categories,
     }
 }
