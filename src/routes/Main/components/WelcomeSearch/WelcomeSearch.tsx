@@ -4,6 +4,7 @@ import avatar from './img/avatar.png'
 import search from './img/search.svg'
 import { connect } from 'react-redux'
 import { changeSearch } from '../../../../actions/actionCreators'
+import { Link } from 'react-router-dom'
 
 interface WelcomeSearchProps {
     changeSearch: (search: string | null) => void
@@ -18,7 +19,7 @@ function WelcomeSearch(props: WelcomeSearchProps) {
                 : props.changeSearch(null)
         }
     }
-    return (
+    return ( 
         <div className={styles.welcomeSearchBlock}>
             <div className={styles.welcomeBlock}>
                 <img src={avatar} alt="" className={styles.avatar} />
@@ -30,6 +31,7 @@ function WelcomeSearch(props: WelcomeSearchProps) {
                 </div>
             </div>
             <div className={styles.search}>
+            <Link to="/SearchFilter">
                 <img src={search} alt="" className={styles.searchIcon} />
                 <input
                     ref={input}
@@ -38,6 +40,7 @@ function WelcomeSearch(props: WelcomeSearchProps) {
                     placeholder="Начните поиск..."
                     onBlur={() => inputChangeHandler()}
                 />
+            </Link>
             </div>
         </div>
     )
