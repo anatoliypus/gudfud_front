@@ -17,6 +17,16 @@ interface WelcomeSearchProps {
 }
 
 function SearchFilter(props: WelcomeSearchProps) {
+
+    function RadioClickHandler(str: string, checked: boolean) {
+        props.setCategories(props.categories.map((el) => {
+            if (el.title === str) {
+                return {...el, checked}
+            }
+            return el
+        }))
+    }
+
     useEffect(() => {
         async function fetchData() {
             const res = await fetch(
@@ -59,17 +69,22 @@ function SearchFilter(props: WelcomeSearchProps) {
                     onBlur={() => inputChangeHandler()}
                 />
             </div>
+            <p className={styles.CategotyHeader}>Выберите категорию</p>
             <div className={styles.CategoryFilterBlock}>
-                <p>Выберите категорию</p>
                 {props.categories &&
                     props.categories.map((el, index) => (
-                        <p key={index}>{el.title}</p>
+                        <>
+                        <div key={index} className={styles.CategoryInputBlock}>
+                            <input type="checkbox" className={styles.inputCategory} onClick=""></input>
+                            <label className={styles.LabelInput}> {el.title}</label>
+                        </div>
+                        </>
                     ))}
-                <button className={styles.SeeMore}>
-                    <p>Показать больше</p>
-                </button>
-                <div className={styles.BetweenBlock}></div>
             </div>
+            <button className={styles.SeeMore}>
+                    <p>Показать больше</p>
+            </button>
+            <div className={styles.BetweenBlock}></div>
             <div className={styles.FooterSearch}>
                 <div className={styles.SeeRecipeBlock}>
                     <button className={styles.SeeRecipeButton}>
