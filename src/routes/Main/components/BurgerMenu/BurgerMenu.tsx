@@ -9,7 +9,7 @@ export default function BurgerMenu() {
     const showBM = () => setBM(!BM)
 
     return (
-        <div className="main">
+        <div className={BM ? 'main active' : 'main'}>
             <button
                 className={!BM ? 'BurgerMenuIcon active' : 'BurgerMenuIcon'}
                 onClick={showBM}

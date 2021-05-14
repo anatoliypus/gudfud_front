@@ -5,9 +5,14 @@
     width: 100%;
     height: 100%;
     position: fixed;
-    z-index: 100000;
     border-top-right-radius: 25px;
+    z-index: 0;
 }
+
+.main.active {
+    z-index: 10000;
+}
+
 .BurgerMenuIcon {
     background-image: url('./Hamburger_icon.svg');
     background-repeat: no-repeat;
@@ -19,6 +24,8 @@
     border: 0;
     z-index: 50;
     display: none;
+    margin-left: 12px;
+    margin-top: 2px;
 }
 
 .BurgerMenuIcon.active {
@@ -41,8 +48,8 @@
 
 .BurgerMenu.active {
     display: flex;
-    transition: 350ms;
 }
+
 .User {
     background-image: url('./Header_Background.jpg');
     background-size: 100%;
@@ -55,6 +62,7 @@
     flex-direction: row;
     align-items: center;
 }
+
 .UserPic {
     background-image: url('./Avatar.jpg');
     background-repeat: no-repeat;
@@ -63,12 +71,14 @@
     height: 61px;
     border-radius: 75px;
 }
+
 .UserData,
 .UserPic {
     margin-top: 20px;
     margin-left: 20px;
     margin-bottom: 20px;
 }
+
 .UserData {
     width: 100%;
     height: 100%;
@@ -77,6 +87,7 @@
     align-items: flex-start;
     justify-content: space-between;
 }
+
 .SideBar {
     max-width: 400px;
     min-width: 320px;
@@ -86,11 +97,12 @@
     border-bottom-right-radius: 25px;
     border-radius: 50px;
 }
+
 .PagesList {
     height: 72%;
     display: grid;
     background-color: white;
-    grid-template-rows: repeat(auto-fill, minmax(50px, 110px));
+    grid-template-rows: repeat(auto-fill, minmax(50px, 80px));
     text-decoration: none;
     row-gap: 0px;
     align-items: start;
@@ -104,6 +116,7 @@
     border-bottom: 0.5px solid rgb(230, 230, 230);
     max-height: 75px;
     align-self: center;
+    text-justify: center;
 }
 .DeadZone {
     justify-self: right;
@@ -117,26 +130,30 @@
     min-height: 35px;
     height: 35px;
 }
+
 .FeedBack {
     display: grid;
     grid-template-rows: repeat(auto-fill, 40px);
-    margin-top: 5px;
-    background-image: url('./Yellow.jpg');
+    background-color: #f9d140;
     height: 20%;
 }
+
 .FeedBack p,
 .FeedBack a {
     margin-top: 15px;
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     margin-left: 15px;
     margin-right: 15px;
 }
+
 .FeedBack a {
     color: #de7e0f;
     text-decoration: underline;
     font-weight: 600;
+    margin-top: 30px;
 }
+
 .text-link {
     color: inherit;
     text-decoration: none;
