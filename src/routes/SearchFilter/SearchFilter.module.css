@@ -1,17 +1,33 @@
 .CategoryFilterBlock {
     width: 100%;
+    height: 50%;
     margin-top: 40px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(13, 20%);
+    grid-column-gap: 30%;
+    grid-row-gap: 10px;
+    justify-content: center;
+    overflow: auto;
 } 
 
-.FilterUl {
-    margin-top: 30px;
+.CategoryInputBlock{
+    width: auto;
+}
+
+.LabelInput {
+	width: 17px;
+	height: 18px;
+	background-image: url(./img/radio-1.png) 0 0 no-repeat;
+}
+ 
+/* Checked */
+.LabelInput:checked {
+	background-image: url(./img/radio-2.png) 0 0 no-repeat;
 }
 
 .SeeMore {
+    display: none;
     margin-top: 20px;
     width: 30%;
     height: 20%;
