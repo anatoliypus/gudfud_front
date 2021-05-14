@@ -25,33 +25,33 @@ export default function BurgerMenu() {
                     </div>
                     <div className="PagesList">
                         <div>
-                            <Link className="text-link" to="/">
+                            <Link className="text-link" to="/" onClick={showBM}>
                                 Главная
                             </Link>
                         </div>
                         <div>
-                            <Link className="text-link" to="/favouriteRecipes">
+                            <Link className="text-link" to="/favouriteRecipes" onClick={showBM}>
                                 Любимые рецепты
                             </Link>
                         </div>
                         <div>
-                            <Link className="text-link" to="/preferences">
+                            <Link className="text-link" to="/preferences" onClick={showBM}>
                                 Предпочтения
                             </Link>
                         </div>
                         <div>
-                            <Link className="text-link" to="/requestHistory">
+                            <Link className="text-link" to="/requestHistory" onClick={showBM}>
                                 История запросов
                             </Link>
                         </div>
                         <div id="space"></div>
                         <div>
-                            <Link className="text-link" to="/settings">
+                            <Link className="text-link" to="/settings" onClick={showBM}>
                                 Настройки
                             </Link>
                         </div>
                         <div>
-                            <Link className="text-link" to="/support">
+                            <Link className="text-link" to="/support" onClick={showBM}>
                                 Служба поддержки
                             </Link>
                         </div>
