@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { AppType} from '../../model/model'
 import { connect } from 'react-redux'
 import { Header } from '../CommonComponents/Header/Header'
@@ -14,7 +14,11 @@ interface WelcomeSearchProps {
 
 function SearchFilter(props: WelcomeSearchProps) {
 
-    const history = useHistory()
+    React.useEffect(() => {
+        async function (search: string | null) {
+            
+        }
+    })
 
 
     const input = useRef<HTMLInputElement>(null)
@@ -36,6 +40,8 @@ function SearchFilter(props: WelcomeSearchProps) {
     }); 
 
     console.log(logo);
+
+    
 
     return (
         <>
