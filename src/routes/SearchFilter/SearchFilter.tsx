@@ -18,15 +18,6 @@ interface WelcomeSearchProps {
 
 function SearchFilter(props: WelcomeSearchProps) {
 
-    function RadioClickHandler(str: string, checked: boolean) {
-        props.setCategories(props.categories.map((el) => {
-            if (el.title === str) {
-                return {...el, checked}
-            }
-            return el
-        }))
-    }
-
     useEffect(() => {
         async function fetchData() {
             const res = await fetch(
@@ -75,8 +66,10 @@ function SearchFilter(props: WelcomeSearchProps) {
                     props.categories.map((el, index) => (
                         <>
                         <div key={index} className={styles.CategoryInputBlock}>
-                            <input type="checkbox" className={styles.inputCategory} onClick=""></input>
-                            <label className={styles.LabelInput}> {el.title}</label>
+                        <label className={styles.LabelInput}>
+                            <p>{el.title}</p>
+                            <input type='checkbox' name='checkbox' className={styles.inputCategory}></input>
+                        </label>
                         </div>
                         </>
                     ))}

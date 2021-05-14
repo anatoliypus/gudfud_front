@@ -11,20 +11,47 @@
     overflow: auto;
 } 
 
-.CategoryInputBlock{
-    width: auto;
+.CategotyHeader {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
 }
 
-.LabelInput {
+.CategoryInputBlock input[type=checkbox] {
+	display: none;
+}
+.CategoryInputBlock label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	padding-left: 25px;
+	margin-right: 0;
+	line-height: 18px;
+	user-select: none;
+}
+.CategoryInputBlock label:before {
+	content: "";
+	display: inline-block;
 	width: 17px;
 	height: 18px;
-	background-image: url(./img/radio-1.png) 0 0 no-repeat;
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+	background: url(./img/radio-1.png) 0 0 no-repeat;
 }
  
 /* Checked */
-.LabelInput:checked {
-	background-image: url(./img/radio-2.png) 0 0 no-repeat;
+.CategoryInputBlock input[type=checkbox]:checked + label:before:checked {
+	background: url(./img/radio-2.png) 0 0 no-repeat;
 }
+ 
+/* Hover */
+.CategoryInputBlock label:hover:before {
+	filter: brightness(120%);
+}
+ 
 
 .SeeMore {
     display: none;
