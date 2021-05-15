@@ -27,7 +27,7 @@ export function getRecipes(
                             el.steps,
                             el.cook_time,
                             JSON.parse(el.ingredients),
-                            JSON.parse(el.images),
+                            el.images,
                             el.title
                         )
                     )
@@ -35,6 +35,7 @@ export function getRecipes(
                     console.log('error while parsing')
                 }
             }
+            console.log(collection)
             resolve(collection)
         } else {
             console.log(res)
