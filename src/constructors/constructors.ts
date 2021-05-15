@@ -1,4 +1,4 @@
-import { Recipe, UserType, Product, AppType } from '../model/model'
+import { Recipe, UserType, Product, AppType, Category } from '../model/model'
 
 export function createUser(
     login: string | null = null,
@@ -50,5 +50,12 @@ export function createApp(): AppType {
         choosedRecipe: null,
         offset: 0,
         loadAmount: 4,
+    }
+}
+
+export function createCategory(title: string): Category {
+    return {
+        title,
+        choosed: false,
     }
 }
