@@ -1,0 +1,160 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    border-top-right-radius: 25px;
+    z-index: 0;
+}
+
+.main.active {
+    z-index: 10000;
+}
+
+.BurgerMenuIcon {
+    background-image: url('./Hamburger_icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 75px;
+    background-color: rgb(255, 255, 255);
+    border: 0;
+    z-index: 50;
+    display: none;
+    margin-left: 12px;
+    margin-top: 2px;
+}
+
+.BurgerMenuIcon.active {
+    display: flex;
+}
+
+.BurgerMenuIcon:hover {
+    background-color: #0000003d;
+    transition: all 500ms ease;
+}
+
+.BurgerMenu {
+    display: none;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    z-index: 1;
+    border-top-right-radius: 25px;
+}
+
+.BurgerMenu.active {
+    display: flex;
+}
+
+.User {
+    background-image: url('./Header_Background.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom: 0.5px solid rgb(230, 230, 230);
+    width: 100%;
+    display: flex;
+    min-height: 100px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.UserPic {
+    background-image: url('./Avatar.jpg');
+    background-repeat: no-repeat;
+    background-size: inherit;
+    width: 61px;
+    height: 61px;
+    border-radius: 75px;
+}
+
+.UserData,
+.UserPic {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.UserData {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.SideBar {
+    max-width: 400px;
+    min-width: 320px;
+    width: 100%;
+    align-content: flex-end;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-radius: 50px;
+}
+
+.PagesList {
+    height: 72%;
+    display: grid;
+    background-color: white;
+    grid-template-rows: repeat(auto-fill, minmax(50px, 80px));
+    text-decoration: none;
+    row-gap: 0px;
+    align-items: start;
+}
+
+.PagesList div {
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 16px;
+    min-height: 50px;
+    border-bottom: 0.5px solid rgb(230, 230, 230);
+    max-height: 75px;
+    align-self: center;
+    text-justify: center;
+}
+.DeadZone {
+    justify-self: right;
+    width: 100%;
+    height: 100;
+    background-color: rgba(0, 0, 0, 0.308);
+    z-index: 100;
+}
+
+#space {
+    min-height: 35px;
+    height: 35px;
+}
+
+.FeedBack {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, 40px);
+    background-color: #f9d140;
+    height: 20%;
+}
+
+.FeedBack p,
+.FeedBack a {
+    margin-top: 15px;
+    color: white;
+    font-size: 16px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.FeedBack a {
+    color: #de7e0f;
+    text-decoration: underline;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.text-link {
+    color: inherit;
+    text-decoration: none;
+}
