@@ -19,6 +19,7 @@ interface WelcomeSearchProps {
 
 function SearchFilter(props: WelcomeSearchProps) {
     function RadioClickHandler(str: string) {
+        console.log(1)
         if (props.categories) {
             props.setCategories(
                 props.categories.map((el) => {
@@ -107,24 +108,19 @@ function SearchFilter(props: WelcomeSearchProps) {
             <div className={styles.CategoryFilterBlock}>
                 {props.categories &&
                     props.categories.map((el, index) => (
-                        <>
-                            <div
-                                key={index}
-                                className={styles.CategoryInputBlock}
-                            >
+                        <div className={styles.CategoryInputBlock} key={index}>
+                            <label className={styles.LabelInput}>
                                 <input
                                     type="checkbox"
                                     className={styles.inputCategory}
                                     onClick={() => {
+                                        console.log(2)
                                         RadioClickHandler(el.title)
                                     }}
                                 ></input>
-                                <label className={styles.LabelInput}>
-                                    {' '}
-                                    {el.title}
-                                </label>
-                            </div>
-                        </>
+                                {el.title}
+                            </label>
+                        </div>
                     ))}
             </div>
             <button className={styles.SeeMore}>
