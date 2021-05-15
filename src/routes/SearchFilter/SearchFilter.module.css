@@ -9,7 +9,8 @@
     grid-row-gap: 10px;
     justify-content: center;
     overflow: auto;
-} 
+    padding: 0 80px;
+}
 
 .CategotyHeader {
     margin-top: 20px;
@@ -19,39 +20,38 @@
     font-weight: 500;
 }
 
-.CategoryInputBlock input[type=checkbox] {
-	display: none;
+.CategoryInputBlock input[type='checkbox'] {
+    display: none;
 }
 .CategoryInputBlock label {
-	display: inline-block;
-	cursor: pointer;
-	position: relative;
-	padding-left: 25px;
-	margin-right: 0;
-	line-height: 18px;
-	user-select: none;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 0;
+    line-height: 18px;
+    user-select: none;
 }
 .CategoryInputBlock label:before {
-	content: "";
-	display: inline-block;
-	width: 17px;
-	height: 18px;
-	position: absolute;
-	left: 0;
-	bottom: 1px;
-	background: url(./img/radio-1.png) 0 0 no-repeat;
+    content: '';
+    display: inline-block;
+    width: 17px;
+    height: 18px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    background: url(./img/radio-1.png) 0 0 no-repeat;
 }
- 
+
 /* Checked */
-.CategoryInputBlock input[type=checkbox]:checked + label:before:checked {
-	background: url(./img/radio-2.png) 0 0 no-repeat;
+.CategoryInputBlock input[type='checkbox']:checked + label:before:checked {
+    background: url(./img/radio-2.png) 0 0 no-repeat;
 }
- 
+
 /* Hover */
 .CategoryInputBlock label:hover:before {
-	filter: brightness(120%);
+    filter: brightness(120%);
 }
- 
 
 .SeeMore {
     display: none;
@@ -61,7 +61,6 @@
 }
 
 .BetweenBlock {
-
 }
 
 .FooterSearch {
@@ -69,17 +68,16 @@
     height: 20%;
     display: flex;
     flex-direction: row;
-    position:fixed;
-    left:0px;
-    bottom:0px;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
     background-image: url(./img/footer-background.png);
     background-size: 100% 100%;
     background-position: center center;
-
-    
 }
 
-.SeeRecipeBlock, .ClearFilterBlock{
+.SeeRecipeBlock,
+.ClearFilterBlock {
     width: auto;
     height: 20%;
     display: flex;
@@ -94,7 +92,8 @@
 .ClearFilterBlock {
 }
 
-.ClearFilterButton, .SeeRecipeButton {
+.ClearFilterButton,
+.SeeRecipeButton {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 140px;
     padding: 5px 10px;
@@ -103,11 +102,12 @@
     color: #000;
     font-size: 15px;
     font-weight: 400;
-    background-color: #FFF7D3;
+    background-color: #fff7d3;
 }
 
-.ClearFilterButton:hover, .SeeRecipeButton:hover {
-    background-color: #F7BA33;
+.ClearFilterButton:hover,
+.SeeRecipeButton:hover {
+    background-color: #f7ba33;
 }
 
 .search {

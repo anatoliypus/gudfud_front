@@ -19,6 +19,7 @@ export function getRecipes(
         if (res.ok) {
             const json = await res.json()
             let collection = []
+            console.log(json)
             for (let el of json) {
                 try {
                     collection.push(
@@ -26,7 +27,7 @@ export function getRecipes(
                             el.categories,
                             el.steps,
                             el.cook_time,
-                            JSON.parse(el.ingredients),
+                            el.ingredients,
                             el.images,
                             el.title
                         )
